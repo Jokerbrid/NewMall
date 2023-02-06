@@ -1,0 +1,41 @@
+
+
+server:
+  port: 20010
+
+spring:
+  application:
+    name: mall-auth
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:  jdbc:mysql://192.168.174.3:3306/mall_auth?serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    hikari:
+      auto-commit: false #开启事务控制。
+  cloud:
+    nacos:
+      server-addr: 192.168.174.3:8848		#服务地址（nacos配置的地址默认是8848）
+      discovery:           #配置所属集群
+        cluster-name: HZ
+        ephemeral: false  #修改为 非临时
+        group: mall
+  redis:
+    host: 192.168.174.3
+    port: 6379
+    database: 0
+    lettuce:
+      pool:
+        max-active: 20
+        max-idle: 10
+    timeout: 10000
+
+  thymeleaf:
+    prefix: classpath:/templates/
+logging:
+  level:
+    com:
+      mall:
+        auth:
+          mapper: debug

@@ -1,0 +1,13 @@
+
+
+
+
+
+
+# 模块文件移除
+*.iml
+
+# 项目排除路径
+/EntityGenarator/target/
+/mall-auth/target/
+/mall-gateway/target/
