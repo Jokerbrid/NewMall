@@ -7,10 +7,8 @@ spring:
 
   cloud:
     nacos:
-      server-addr: 192.168.174.3:8848		#服务地址（nacos配置的地址默认是8848）
       discovery:           #配置所属集群
-        cluster-name: HZ
-        ephemeral: false  #修改为 非临时
+        server-addr: 192.168.174.3:8848		#服务地址（nacos配置的地址默认是8848）
         group: mall
     gateway:
       discovery:
